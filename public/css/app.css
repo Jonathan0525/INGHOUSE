@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.color-1 {
+  color: #fec013;
+}
+
+.color-2 {
+  color: #e6e7e8;
+}
+
+.color-3 {
+  color: #27336e;
+}
+
+.color-1-b {
+  background: #fec013;
+}
+
+.color-2-b {
+  background: #e6e7e8;
+}
+
+.color-3-b {
+  background: #27336e;
+}
+
+/*@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";*/
+
