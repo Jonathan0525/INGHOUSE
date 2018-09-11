@@ -5,7 +5,7 @@
    <img src="{{ asset('img/load.svg') }}" class="img-fluid loading">
    <p>CARGANDO</p>
 </div>
-<div class="container-fluid color-marca d-flex flex-column align-items-center justify-content-center">
+<div class="container-fluid container-fluid-my color-marca d-flex flex-column align-items-center justify-content-center">
    <div class="panel panel-default d-flex flex-column align-items-center justify-content-center">
       <div class="panel-heading logo-style">
          <img src="{{ asset('img/logo.png') }}" class="img-fluid logo-loader">

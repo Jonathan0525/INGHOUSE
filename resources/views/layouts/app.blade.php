@@ -11,12 +11,13 @@
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
       <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
       <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700,900" rel="stylesheet">
+      <!-- Styles fonts-->
+      <link href="{{ asset('fonts/icons/css/fontello.css') }}" rel="stylesheet">
    </head>
    <body>
       <div id="app">
-       
-
+      
          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +52,7 @@
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                </form>
             </div>
-         </nav> -->
+            </nav> -->
          @yield('content')
       </div>
       <!-- Scripts -->

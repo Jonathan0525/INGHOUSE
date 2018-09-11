@@ -998,6 +998,18 @@ setTimeout(function () {
   $(".loader").removeClass("on");
 }, 1000);
 
+$(document).ready(function () {
+  $(".menu-user").click(function () {
+    $(".menu-user-on").fadeIn().css("display", "flex");
+  });
+});
+
+$(document).ready(function () {
+  $(".cerrar-u-m").click(function () {
+    $(".menu-user-on").fadeOut();
+  });
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {

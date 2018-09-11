@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-fluid color-marca d-flex flex-column align-items-center justify-content-center">
+<div class="container-fluid container-fluid-my color-marca d-flex flex-column align-items-center justify-content-center">
    <div class="panel panel-default d-flex flex-column align-items-center justify-content-center box-register">
       <div class="panel-heading logo-style" style="background: none;">
          <img src="{{ asset('img/logo-register.png') }}" class="img-fluid logo-loader">

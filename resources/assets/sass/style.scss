@@ -2,6 +2,192 @@
 
 body,html {
 	font-family: 'Roboto', sans-serif !important;
+    background: $body-bg;
+    height: 100%;
+}
+div#app {
+    height: 100%;
+}
+
+a {
+    transition: all ease .8s;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('/../font/icons/font/fontello.eot?45396331');
+  src: url('/../font/icons/font/fontello.eot?45396331#iefix') format('embedded-opentype'),
+       url('/../font/icons/font/fontello.woff2?45396331') format('woff2'),
+       url('/../font/icons/font/fontello.woff?45396331') format('woff'),
+       url('/../font/icons/font/fontello.ttf?45396331') format('truetype'),
+       url('/../font/icons/font/fontello.svg?45396331#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a.btn-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+a.btn-home:hover {
+    background: #1a224c;
+}
+
+a.btn-home p {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+span.line-home-btn {
+    background: #fdc013;
+    width: 50px;
+    height: 2px;
+}
+.box-sub-titulo {
+    background: $color-1;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-sub-titulo h1 {
+    font-size: 20px;
+    margin: 0px;
+    font-style: italic;
+    color: $color-3;
+}
+
+.b-general {
+    height: 88%;
+    top: 0px;
+}
+
+
+.box-p-h {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-p {
+    background: $color-3;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    border: solid 1px #1f2958;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.btn-p i {
+    color: #fff;
+    font-size: 50px;
+}
+
+.botones_p {
+    background: green;
+    height: 100%;
+}
+
+.my-no-gutters {
+    
+    padding: 0px;
+    padding: 0px;
+    width: 1200px;
+    margin: auto;
+}
+
+.panel-body.header-name {
+    margin: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.panel-body.header-name h3 {
+    margin: 0px;
+    color: $color-3;
+     font-weight: 100;
+}
+
+.panel-body.header-name h4 {
+    margin: 0px;
+    color: $color-3;
+    font-weight: 500;
+}
+
+ul.menu-user-opt li a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+span.box-mini-li {
+    width: 7px;
+    height: 7px;
+    display: block;
+    position: relative;
+    background: #fdc013;
+    margin-right: 10px;
+}
+.cerrar-u-m {
+    color: #fff !important;
+    position: absolute;
+    font-size: 30px !important;
+    top: 2%;
+    right: 4%;
+}
+
+ul.menu-user-opt li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+ul.menu-user-opt {
+    width: 100%;
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -38px;
+}
+
+.my-nav {
+    width: 1140px;
+    max-width: 100%;
+}
+.menu-user-on i {
+    color: $color-1;
+    font-size: 80px;
+}
+.menu-user-on {
+    display: none;
+    background: rgba(14, 23, 55, 0.92);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 1;
+    padding-top: 30px;
+    color: #fff;
+    overflow: scroll;
+}
+.logo-icon img {
+    width: 120px;
+}
+
+.menu-user {
+    font-size: 30px;
+    color: $color-3;
 }
 
 .box-register {
@@ -68,9 +254,9 @@ background: linear-gradient(135deg, #fec013 0%,#fcb025 50%,#fec013 100%); /* W3C
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec013', endColorstr='#fec013',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.container-fluid {
+.container-fluid-my {
 
-    height: 100vh;
+    height: 100%;
 
 }
 
@@ -110,7 +296,30 @@ img.img-fluid.logo-loader {}
     border-color: none;
 }
 
+/*MOVIL*/
 @media screen and (max-width: 768px) {
+    ul.menu-user-opt {
+    width: auto;
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -38px;
+}
+    .my-no-gutters {
+    margin: 0px !important;
+    padding: 0px;
+    padding: 0px;
+    width: 100%;
+
+}
+    .menu-user {
+    font-size: 26px;
+    color: #27336e;
+}
+.logo-icon img {
+    width: 80px;
+}
 
 .panel-heading.logo-style img {
     width: 60%;
