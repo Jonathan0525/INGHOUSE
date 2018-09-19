@@ -22,7 +22,7 @@
       </div>
       <div class="d-flex align-items-center justify-content-center flex-wrap botones_p">
          <div class="btn-p">
-            <a href="{{ route('dashboard') }}" class="btn-home">
+            <a href="" class="btn-home">
                <i class="demo-icon icon-icono-i-3"></i>
                <p>SOLICITAR <br>SERVICIO</p>
                <span class="line-home-btn"></span>

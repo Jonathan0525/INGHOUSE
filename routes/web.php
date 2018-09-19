@@ -20,51 +20,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::group(['prefix' => 'dashboard'], function(){
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function(){
+	Route::resource('adminpanel', 'AdminUserController');
 
-	Route::get('/', 'dashboardController@index')->name('dashboard');
 
-	// Route::resource('user','UserController');
-	// Route::resource('categories','CategoriesController');
+	Route::resource('user', 'UserController');
 
-	Route::resource('servicio', 'servicioController');
-	Route::get('servicio/{id}/destroy', [
-		'uses'  => 'servicioController@destroy',
-		'as'	=> 'dashboard.servicio.destroy'
-
-	]);
-
-	// Route::resource('articles', 'ArticlesController');
-	// Route::get('articles/{id}/destroy', [
-	// 	'uses'  => 'ArticlesController@destroy',
-	// 	'as'	=> 'dashboard.articles.destroy'
-
-	// ]);
+	Route::resource('frontservicio', 'ServiciosFrontController');
 
 });
 
 
-
-Route::group(['middleware' => ['auth'], 'prefix' => 'adminghouse'], function(){
-
-	//Route::get('/', 'dashboardController@index')->name('dashboard');
-
-	// Route::resource('user','UserController');
-	// Route::resource('categories','CategoriesController');
-
-	Route::resource('servicios', 'serviciosController');
-	Route::get('servicios/{id}/destroy', [
-		'uses'  => 'serviciosController@destroy',
-		'as'	=> 'dashboard.servicios.destroy'
-
-	]);
-
-	// Route::resource('articles', 'ArticlesController');
-	// Route::get('articles/{id}/destroy', [
-	// 	'uses'  => 'ArticlesController@destroy',
-	// 	'as'	=> 'dashboard.articles.destroy'
-
-	// ]);
-
-});

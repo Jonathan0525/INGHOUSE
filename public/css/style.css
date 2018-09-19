@@ -38,6 +38,53 @@ a {
   transition: all ease .8s;
 }
 
+.mysubmit {
+  background: #fdc013;
+  font-weight: 600;
+  color: #26336e;
+}
+
+.servicio_listado {
+  background: #26336e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.servicio_listado h4 {
+  color: #FFF !important;
+  font-weight: 500 !important;
+}
+
+.servicio_listado p {
+  margin: 0px;
+  line-height: 1;
+  color: #26336e;
+  font-weight: 600;
+  background: #fdc013;
+  padding: .2rem 10px;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 13px;
+  margin-right: 10px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: gainsboro !important;
+  border-color: #f7921e !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+}
+
 @font-face {
   font-family: 'fontello';
   src: url("/../font/icons/font/fontello.eot?45396331");
@@ -104,7 +151,7 @@ span.line-home-btn {
 }
 
 .b-general {
-  height: 88%;
+  height: 80%;
   top: 0px;
 }
 
