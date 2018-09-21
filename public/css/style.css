@@ -38,6 +38,17 @@ a {
   transition: all ease .8s;
 }
 
+.button {
+  margin: 0 0 0 5px;
+  text-indent: -9999px;
+  cursor: pointer;
+  width: 29px;
+  height: 29px;
+  float: left;
+  text-align: center;
+  background: red;
+}
+
 .mysubmit {
   background: #fdc013;
   font-weight: 600;
@@ -194,6 +205,7 @@ span.line-home-btn {
 }
 
 .my-no-gutters {
+  max-width: 100%;
   padding: 0px;
   padding: 0px;
   width: 1200px;

@@ -29,6 +29,17 @@ Route::group(['prefix' => 'dashboard'], function(){
 
 	Route::resource('frontservicio', 'ServiciosFrontController');
 
+
+// Route::get('user/list_servicios', [
+// 	'as' => 'frontservicio.index',
+// 	'uses' => 'UserController@list_servicios'
+// ]);
+
+Route::get('user/create_s/{id}', [
+	'as' => 'user.create_s',
+	'uses' => 'UserController@createservice'
+]);
+
 });
 
 

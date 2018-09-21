@@ -10,7 +10,8 @@ class ServiciosFrontController extends Controller
     public function index() {
 
     $servicios = Servicio::orderBy('id', 'DESC')->paginate(5);
-    return view('dashboard.frontservicio.index')->with('servicios', $servicios);
+        return view('dashboard.frontservicio.index')
+            ->with('servicios', $servicios);
 
     }
 

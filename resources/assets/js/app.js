@@ -37,3 +37,39 @@ $(document).ready(function(){
 	});
 });
 
+var a = 0;
+function myFunction() {
+  a = a + 1;
+  document.getElementById("demo").textContent = a;
+}
+
+
+
+// $(function() {
+
+//   $(".numbers-row").append('<div class="inc button">+</div><div class="dec button">-</div>');
+
+//   $(".button").on("click", function() {
+
+//     var $button = $(this);
+//     var oldValue = $button.parent().find("input").val();
+//     var oldValue2 = $button.parent().find("input").val();
+
+
+
+//     if ($button.text() == "+") {
+//   	  var newVal = parseFloat(oldValue) + parseFloat(oldValue2);
+//   	} else {
+// 	   // Don't allow decrementing below zero
+//       if (oldValue > 0) {
+//         var newVal = parseFloat(oldValue) - parseFloat(oldValue);
+// 	    } else {
+//         newVal = 0;
+//       }
+// 	  }
+
+//     $button.parent().find("input").val(newVal);
+
+//   });
+
+// });
