@@ -45,9 +45,10 @@ $(document).ready(function()
 });
 </script> -->
 
-<p id="demo2">1</p>
+
 <button onclick="myFunction2()">-</button>
 <input type="text" name="nombre" id="nombre" hidden="hidden" class="nombre" value="{{$servicio->precio_hora}}">
+<p id="demo2">1</p>
 <p id="demo">{{$servicio->precio_hora}}</p>
 <button onclick="myFunction()">+</button>
 <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
