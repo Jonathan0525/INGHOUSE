@@ -14,6 +14,8 @@
       <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700,900" rel="stylesheet">
       <!-- Styles fonts-->
       <link href="{{ asset('fonts/icons/css/fontello.css') }}" rel="stylesheet">
+
+      <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" media="screen">
    </head>
    <body>
       <div id="app">
@@ -60,5 +62,22 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script src="{{ asset('js/app.js') }}"></script>
+      <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+      <script src="{{ asset('js/bootstrap-datetimepicker.es.js') }}"></script>
+
+      <script type="text/javascript">
+      $('.form_datetime').datetimepicker({
+         language:  'es',
+         weekStart: 1,
+         todayBtn:  1,
+         autoclose: 1,
+         todayHighlight: 1,
+         startView: 2,
+         forceParse: 0,
+         showMeridian: 1,
+         format: 'yyyy-mm-dd hh:ii'
+      });
+   
+</script>
    </body>
 </html>
