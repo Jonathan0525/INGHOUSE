@@ -13,6 +13,52 @@ body,html {
   src: url('/../fonts/glyphicons-halflings-regular.eot');
   src: url('/../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/../fonts/glyphicons-halflings-regular.woff') format('woff'), url('/../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
+.stage {
+    border-bottom: solid #162261 3px;
+}
+.badge-y {
+    background: #fdc013;
+    margin: 0px;
+    color: #27336e;
+    display: inline-flex;
+    border-radius: 17px;
+    padding: .1rem .9rem;
+    width: auto;
+    position: relative;
+    flex-wrap: wrap;
+    border:none;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+.info-1 {
+    justify-content: flex-start;
+}
+.selector_horas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.selector_horas a {
+    background: #fcc013;
+    height: 25px;
+    color: #27336e !important;
+    width: 25px;
+    border-radius: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-y p {
+  
+    font-size: 16px;
+    font-weight: 500;
+}
 
 .glyphicon {
   position: relative;
