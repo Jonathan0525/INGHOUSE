@@ -13,8 +13,118 @@ body,html {
   src: url('/../fonts/glyphicons-halflings-regular.eot');
   src: url('/../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/../fonts/glyphicons-halflings-regular.woff') format('woff'), url('/../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
+
+
+#mapid {
+         width: 600px;
+         height: 400px;
+      }
+
+      
+#mapid { height: 100%; width: 100vw; }
+
+
+.input-fecha {
+    background: #121a48 !important;
+    border: none;
+    color: #fdc200;
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px !important;
+    margin: 0px !important;
+}
+.date {
+    padding: 0px !important;
+}
+.stage .form-group {
+    margin-bottom: 0px;
+}
+.input-fecha::placeholder {
+  color: #fdc200 !important;
+     font-style: initial;
+}
+.flex-my-users-select {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-my-users-select .form-check {
+  align-content: center;
+    display: flex !important;
+    flex-direction: column !important;
+    /* background: red; */
+    position: relative;
+    padding-left: 0px;
+    align-items: center;
+}
+.flex-my-users-select .form-check label i {
+    font-size: 60px;
+}
+input#exampleRadios1 {
+    position: relative;
+    margin: 0px;
+    width: 0px;
+}
+
+input#exampleRadios2{
+    position: relative;
+    margin: 0px;
+    width: 0px;
+}
+
+
+input#exampleRadios2:checked + label i{
+    transition:all ease .8s;
+    color: #fdc200;
+    background: #111749;
+    border-radius:10%; 
+}
+
+
+input#exampleRadios1:checked + label i{
+    transition:all ease .8s;
+    color:#fdc200;
+     background: #111749;
+    border-radius:10%; 
+}
+
+label.form-check-label {}
+
+.flex-my-users-select .form-check label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+span.input-group-addon {
+    width: 0px;
+    height: 0px;
+}
+
+span.glyphicon.glyphicon-th {
+    color: #263170;
+}
 .stage {
     border-bottom: solid #162261 3px;
+}
+.d-flex.info-1 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    flex-flow: wrap;
+}
+
+.stage h5 {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+button.badge-y {
+    font-size: 12px;
+    height: 21px;
+}
+b.t-ser {
+    font-weight: 300;
 }
 .badge-y {
     background: #fdc013;
@@ -27,7 +137,7 @@ body,html {
     position: relative;
     flex-wrap: wrap;
     border:none;
-    font-size: 14px;
+    font-size: 12px;
     margin-right: 10px;
     font-weight: 500;
 }
@@ -36,19 +146,70 @@ body,html {
 }
 .selector_horas {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     position: relative;
 }
+.box-content {
+    display: flex;
+    flex-direction: row;
 
+}
+.selector_horas_btns {
+  width: 150px;
+    height: 34px !important;
+    -webkit-box-align: center;
+    background: #fdc100;
+    border-radius: 70px;
+    margin-top: 10px;
+    padding: 10px;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-between;
+}
+
+.info-user-select {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.name-hora {
+    display: flex;
+    font-weight: 500;
+}
+.hora-def {
+    color: #fcc013;
+    font-size: 14px;
+    border: solid 2px #fcc013;
+    border-radius: 10px;
+    margin-top: 5px !important;
+    display: block;
+    position: relative;
+    padding: .2rem .5rem;
+}
+.name-hora p {
+    margin-left: 6px !important;
+}
+.info-user-select p {
+    height: auto;
+    margin: 0px;
+    line-height: normal;
+}
 .selector_horas a {
-    background: #fcc013;
+   background: #fcc013;
     height: 25px;
+    border: solid 2px #27336e;
     color: #27336e !important;
     width: 25px;
     border-radius: 100%;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
