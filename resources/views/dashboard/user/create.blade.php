@@ -75,54 +75,22 @@
                </div>
             </div>
             <input type="text" hidden="hidden" class="form-control" value="2" id="fin_servicio" name="fin_servicio"  placeholder="Ingresa fin_servicio">
-            <!-- <div class="col-md-6 my-3">
-               <div class="form-group">
-                  <label for="exampleInputEmail1">fin servicio</label>
-                  
-                  <small id="addres" class="form-text text-muted">We'll never share your email with anyone else.</small>
-               </div>
-            </div> -->
-            <!-- <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
+
+            
+            
+            <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
                 <h5>Dirección</h5>
                <div class="form-group">
                   <label for="exampleInputEmail1"></label>
                  <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Ingresa Dirección"> 
                  
                </div>
-            </div> -->
+              <div class="mapa-modal">
+              <div id="mapid" class=" " style="width: 100%; height: 300px;"></div>
+              </div>
+            </div>
 
-            
-
-
-
-            <div class="input-group mb-3 p-4">
-
-  <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#mapa-modal" type="button" id="button-addon1">Button</button>
-    <!-- Modal -->
-<div class="modal fade" id="mapa-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body p-0">
-       
- <div id="mapid"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-  <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Ingresa Dirección" aria-label="Example text with button addon" aria-describedby="button-addon1">
-</div>
+          
 
             <div class="col-md-6 my-3">
                <div class="form-group">
@@ -137,6 +105,11 @@
             {!! Form::close() !!}
             <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script>
+              
+
+             
+
+
                var e = $('input:text[name=precio_servicio]').val();
                var h = $('input:text[name=precio_servicio]').val();
                var a = parseFloat(e);
