@@ -14,19 +14,14 @@
       <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700,900" rel="stylesheet">
       <!-- Styles fonts-->
       <link href="{{ asset('fonts/icons/css/fontello.css') }}" rel="stylesheet">
-
       <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" media="screen">
-
-
+      <link href="{{ asset('css/L.Control.MapCenterCoord.css') }}" rel="stylesheet" media="screen">
       <!--mapa-->
-   
-    
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+      <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}" rel="stylesheet" media="screen">
       <!--mapa-->
    </head>
    <body>
       <div id="app">
-      
          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,74 +66,89 @@
       <script src="{{ asset('js/app.js') }}"></script>
       <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
       <script src="{{ asset('js/bootstrap-datetimepicker.es.js') }}"></script>
-
       <!--mapa-->
-
- <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script> 
-
-<script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
+      <script type="text/javascript" src="{{ asset('js/leaflet.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/L.Control.MapCenterCoord.js') }}"></script>
       <!--mapa-->
-
       <script type="text/javascript">
-
-// instead of import {} from 'leaflet-geosearch', use the `window` global
-var GeoSearchControl = window.GeoSearch.GeoSearchControl;
-var OpenStreetMapProvider = window.GeoSearch.OpenStreetMapProvider;
-
-// remaining is the same as in the docs, accept for the var instead of const declarations
-var provider = new OpenStreetMapProvider();
-
-var searchControl = new GeoSearchControl({
-  provider: provider,
-});
-
-var map = new L.Map('mapid');
-map.addControl(searchControl);
-
-   // var map = L.map('mapid').fitWorld();
-
-   // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaWRlYXNsaWJyZXMiLCJhIjoiY2puMmxiOTgzMDUwcjNycW81NjQ5OWpuNCJ9.4MABmFeT5iCiNPUIojrg_Q', {
-   //    maxZoom: 30,
-   //    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-   //       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-   //       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-   //    id: 'mapbox.streets'
-   // }).addTo(map);
-
-   // function onLocationFound(e) {
-   //    var radius = e.accuracy / 1000;
-
-   //    L.marker(e.latlng).addTo(map)
-   //       .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-   //    L.circle(e.latlng, radius).addTo(map);
-   // }
-
-   // function onLocationError(e) {
-   //    alert(e.message);
-   // }
-
-   // map.on('locationfound', onLocationFound);
-   // map.on('locationerror', onLocationError);
-
-   // map.locate({setView: true, maxZoom: 30});
-
-
-
-
-
-      $('.form_datetime').datetimepicker({
-         language:  'es',
-         weekStart: 1,
-         todayBtn:  1,
-         autoclose: 1,
-         todayHighlight: 1,
-         startView: 2,
-         forceParse: 0,
-         showMeridian: 1,
-         format: 'yyyy-mm-dd hh:ii'
-      });
-   
-</script>
+         $("#ubicacion-actual").click(function(){
+         
+            //$(".map").attr('id', 'mapid-my');
+            $(".mapg").css("display", "flex");
+            $(".mapg").html("<div id='mapid-my' class='map' style='width: 100%; display: none;'></div>");
+            $(".opciones-btns-mapa").css("display", "none");
+            $("#mapid-my").css("display", "flex");
+         
+            var map = L.map('mapid-my').setView([4.651350, -74.107121], 12);
+         
+         
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaWRlYXNsaWJyZXMiLCJhIjoiY2puMmxiOTgzMDUwcjNycW81NjQ5OWpuNCJ9.4MABmFeT5iCiNPUIojrg_Q', {
+               maxZoom: 30,
+               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                  '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                  'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+               id: 'mapbox.streets'
+            }).addTo(map);
+         
+            function onLocationFound(e) {
+               var radius = e.accuracy / 1000;
+         
+               L.marker(e.latlng).addTo(map)
+                  .bindPopup("Estas aqui a <b>" + radius + "</b> metros de este punto").openPopup();
+         
+         
+         
+               L.circle(e.latlng, radius).addTo(map);
+            }
+         
+            function onLocationError(e) {
+               alert(e.message);
+            }
+         
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
+         
+            map.locate({setView: true, maxZoom: 30});
+         
+          });
+         
+         
+         
+         $("#ubicar-lugar").click(function(){
+         
+            //$(".map").attr('id', 'mapid-ubi');
+            $(".mapg").css("display", "flex");
+            $(".mapg").html("<div id='mapid-ubi' class='map' style='width: 100%; display: none;'></div>");
+            $(".opciones-btns-mapa").css("display", "none");
+            $("#mapid-ubi").css("display", "flex");
+         
+            var map = L.map('mapid-ubi').setView([4.651350, -74.107121], 11);
+         
+             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+               attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+             }).addTo(map);
+         
+             L.control.mapCenterCoord().addTo(map);
+         
+         
+         
+         });
+         
+         
+               $('.form_datetime').datetimepicker({
+                  language:  'es',
+                  weekStart: 1,
+                  todayBtn:  1,
+                  autoclose: 1,
+                  todayHighlight: 1,
+                  startView: 2,
+                  forceParse: 0,
+                  showMeridian: 1,
+                  format: 'yyyy-mm-dd hh:ii'
+               });
+         
+          
+            
+      </script>
    </body>
 </html>

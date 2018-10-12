@@ -9,7 +9,7 @@
 </nav>
 </div>
 <div class="menu-user-on flex-column align-items-center">
-	<i class="demo-icon icon-cancel cerrar-u-m"></i>
+	<i class="demo-icon icon-cancel cerrar-u-m cerrar-btn"></i>
 	<i class="demo-icon icon-icono-i-2"></i>
 	<ul class="menu-user-opt">
 		<li><a href=""><span class="box-mini-li"></span>Editar Usuario</a></li>

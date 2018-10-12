@@ -21,77 +21,78 @@
                </div>
             </div>
             <div class="col-md-6  mx-0 pt-3 pb-4 px-4 mt-0 selector_horas stage">
-               
                <h5>Horas requeridas</h5>
-
                <div class="box-content">
-
-               <div class="selector_horas_btns">
-                  <a onclick="myFunction2()">-</a>
-                  <a onclick="myFunction()">+</a>
+                  <div class="selector_horas_btns">
+                     <a onclick="myFunction2()">-</a>
+                     <a onclick="myFunction()">+</a>
+                  </div>
+                  <div class="info-user-select">
+                     <input type="text" name="precio_servicio" hidden="hidden" id="precio_servicio" class="nombre" value="{{$servicio->precio_hora}}">
+                     <div class="name-hora">
+                        <p id="demo2">1</p>
+                        <p>Horas</p>
+                     </div>
+                     <p id="demo" class="hora-def">@php
+                        echo  "$ " . $servicio->precio_hora;
+                        @endphp
+                     </p>
+                  </div>
                </div>
-              
-               <div class="info-user-select">
-                  <input type="text" name="precio_servicio" hidden="hidden" id="precio_servicio" class="nombre" value="{{$servicio->precio_hora}}">
-                  <div class="name-hora"><p id="demo2">1</p><p>Horas</p></div>
-                  <p id="demo" class="hora-def">@php
-                     echo  "$ " . $servicio->precio_hora;
-                     @endphp
-                  </p>
-               </div>
-
-               </div>
-               
             </div>
             <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
                <div class="form-group">
                   <h5>Hora y fecha de servicio</h5>
                   <div class="input-group date form_datetime col-md-5" data-date="@php date('l jS \of F Y h:i:s A')  @endphp" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                      <input class="form-control input-fecha" name="inicio_servicio" placeholder="Elige Fecha y Hora" size="16" type="text" value="" readonly>
-                     <span class="input-group-addon"><!-- <span class="glyphicon glyphicon-remove"></span> --></span>
+                     <span class="input-group-addon">
+                        <!-- <span class="glyphicon glyphicon-remove"></span> -->
+                     </span>
                      <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                   </div>
                   <input type="hidden" id="dtp_input1" value="" />
                </div>
             </div>
             <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
-                <h5>Elegir ingeniero</h5>
-                <div class="flex-my-users-select">
-               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="tipo_ingeniero" id="exampleRadios1" value="hombre" checked>
-                  <label class="form-check-label" for="exampleRadios1">
+               <h5>Elegir ingeniero</h5>
+               <div class="flex-my-users-select">
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="tipo_ingeniero" id="exampleRadios1" value="hombre" checked>
+                     <label class="form-check-label" for="exampleRadios1">
                      <i class="demo-icon icon-icono-i-10"></i>
-                  HOMBRE
-                  </label>
-               </div>
-               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="tipo_ingeniero" id="exampleRadios2" value="mujer">
-                  <label class="form-check-label" for="exampleRadios2">
-                      <i class="demo-icon icon-icono-i-11"></i>
-                  MUJER
-                 
-                  </label>
-               </div>
+                     HOMBRE
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="tipo_ingeniero" id="exampleRadios2" value="mujer">
+                     <label class="form-check-label" for="exampleRadios2">
+                     <i class="demo-icon icon-icono-i-11"></i>
+                     MUJER
+                     </label>
+                  </div>
                </div>
             </div>
             <input type="text" hidden="hidden" class="form-control" value="2" id="fin_servicio" name="fin_servicio"  placeholder="Ingresa fin_servicio">
-
-            
-            
             <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
-                <h5>Dirección</h5>
+               <h5>Dirección</h5>
                <div class="form-group">
-                  <label for="exampleInputEmail1"></label>
-                 <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Ingresa Dirección"> 
-                 
+                  <!-- <label for="exampleInputEmail1"></label> -->
+                  <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Ingresa Dirección"> 
+                  <a class="btn my-btn-primary mt-2 mb-2" id="open-m-mapa">Abrir Mapa</a>
                </div>
-              <div class="mapa-modal">
-              <div id="mapid" class=" " style="width: 100%; height: 300px;"></div>
-              </div>
+               <div class="mapa-modal" style="display: none;">
+                <i class="demo-icon icon-cancel cerrar-modal-mapa cerrar-btn"></i>
+                  <div class="opciones-btns-mapa">
+                     <h3>Elige una opción</h3>
+                     <div class="btns-mapa-op">
+                        <a href="#" id="ubicacion-actual" class="btn btn-ubi"><i class="demo-icon icon-icono-i-7"></i> Ubicación Actual</a>
+                        <a href="#" id="ubicar-lugar" class="btn btn-ubi"><i class="demo-icon icon-icono-i-7"></i> Ubicar un lugar</a>
+                     </div>
+                  </div>
+                  <div class="mapg" style="display: none;"></div>
+                  
+               </div>
             </div>
-
-          
-
             <div class="col-md-6 my-3">
                <div class="form-group">
                   <label for="exampleInputEmail1">Pago</label>
@@ -105,11 +106,6 @@
             {!! Form::close() !!}
             <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script>
-              
-
-             
-
-
                var e = $('input:text[name=precio_servicio]').val();
                var h = $('input:text[name=precio_servicio]').val();
                var a = parseFloat(e);

@@ -778,19 +778,29 @@ __webpack_require__(9);
 // });
 
 setTimeout(function () {
-  $(".loader").removeClass("on");
+	$(".loader").removeClass("on");
 }, 1000);
 
 $(document).ready(function () {
-  $(".menu-user").click(function () {
-    $(".menu-user-on").fadeIn().css("display", "flex");
-  });
-});
+	$(".menu-user").click(function () {
+		$(".menu-user-on").fadeIn().css("display", "flex");
+	});
 
-$(document).ready(function () {
-  $(".cerrar-u-m").click(function () {
-    $(".menu-user-on").fadeOut();
-  });
+	$("#open-m-mapa").click(function () {
+		$(".mapa-modal").fadeIn().css("display", "flex");
+		$(".opciones-btns-mapa").fadeIn().css("display", "block");
+	});
+
+	$(".cerrar-u-m").click(function () {
+		$(".menu-user-on").fadeOut();
+	});
+
+	$(".cerrar-modal-mapa").click(function () {
+		$(".mapa-modal").fadeOut();
+		$("#mapid-my").fadeOut();
+		$("#mapid-ubi").fadeOut();
+		$(".mapg").fadeOut();
+	});
 });
 
 /***/ }),

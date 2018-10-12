@@ -29,12 +29,27 @@ $(document).ready(function(){
 	$(".menu-user").click(function(){
 		$(".menu-user-on").fadeIn().css("display", "flex");
 	});
-});
 
-$(document).ready(function(){
+	$("#open-m-mapa").click(function(){
+		$(".mapa-modal").fadeIn().css("display", "flex");
+		$(".opciones-btns-mapa").fadeIn().css("display", "block");
+	});
+
 	$(".cerrar-u-m").click(function(){
 		$(".menu-user-on").fadeOut();
+
 	});
+
+	$(".cerrar-modal-mapa").click(function(){
+		$(".mapa-modal").fadeOut();
+		$("#mapid-my").fadeOut();
+		$("#mapid-ubi").fadeOut();
+		$(".mapg").fadeOut();
+
+	});
+
+
+	
 });
 
 
