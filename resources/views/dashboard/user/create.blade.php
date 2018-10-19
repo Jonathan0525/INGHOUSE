@@ -10,7 +10,7 @@
                <input type="text" name="servicio_id" id="servicio_id" hidden="hidden" class="nombre" value="{{$servicio->id}}">
                <h4><b class="t-ser">{{ $servicio->nombre }}</b></h4>
                <div class="d-flex info-1">
-                  <p class="badge-y">@php
+                  <p class="badge-y-out">@php
                      setlocale(LC_MONETARY,"en_US");
                      echo money_format('%(#10.0n', $servicio->precio_hora);
                      @endphp x Hora
@@ -72,16 +72,18 @@
                   </div>
                </div>
             </div>
-            <input type="text" hidden="hidden" class="form-control" value="2" id="fin_servicio" name="fin_servicio"  placeholder="Ingresa fin_servicio">
+            <input type="text" hidden="hidden" class="form-control" value="2018-10-16 13:00" id="fin_servicio" name="fin_servicio"  placeholder="Ingresa fin_servicio">
             <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
                <h5>Dirección</h5>
                <div class="form-group">
                   <!-- <label for="exampleInputEmail1"></label> -->
-                  <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Ingresa Dirección"> 
-                  <a class="btn my-btn-primary mt-2 mb-2" id="open-m-mapa">Abrir Mapa</a>
+                  <!-- <input type="text" class="form-control" value="" id="direccion2" name="direccion2"  placeholder="Ingresa Dirección">  -->
+                  <input type="text" class="form-control ubi-tregistrada" readonly="readonly" value="" id=""  name=""  placeholder="Ubicación Registrada con exito" style="display: none;"> 
+                  <input type="text" class="form-control" value="" id="direccion"  name="direccion"  placeholder="Ingresa Dirección"> 
+                  <a class="btn my-btn-primary mt-2 mb-2" id="open-m-mapa">Ubicar en Mapa</a>
                </div>
                <div class="mapa-modal" style="display: none;">
-                <i class="demo-icon icon-cancel cerrar-modal-mapa cerrar-btn"></i>
+                  <i class="demo-icon icon-cancel cerrar-modal-mapa cerrar-btn"></i>
                   <div class="opciones-btns-mapa">
                      <h3>Elige una opción</h3>
                      <div class="btns-mapa-op">
@@ -90,18 +92,33 @@
                      </div>
                   </div>
                   <div class="mapg" style="display: none;"></div>
-                  
+                  <a  class="btn btn-ubi mt-2 register-location cerrar-modal-mapa" style="display:none;">Registrar Ubicación</a>
+                  <a  class="btn btn-ubi mt-2 register-location2 cerrar-modal-mapa" style="display:none;">Registrar Ubicación</a>
                </div>
             </div>
-            <div class="col-md-6 my-3">
-               <div class="form-group">
-                  <label for="exampleInputEmail1">Pago</label>
-                  <input type="text" class="form-control" id="pago" name="pago"  placeholder="Ingresa Dirección">
-                  <small id="addres" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <div class="col-md-6  mx-0 pt-3 pb-3 px-4 mt-0 stage">
+               <h5>Forma de Pago</h5>
+               <div class="flex-my-users-select">
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="pago" id="pago1" value="efectivo" checked="checked">
+                     <label class="form-check-label" for="pago1">
+                     <i class="demo-icon icon-icono-i-12"></i>
+                     EFECTIVO
+                     </label>
+                  </div>
+                  <!-- <div class="form-check">
+                     <input class="form-check-input" type="radio" name="tipo_ingeniero" id="exampleRadios2" value="mujer">
+                     <label class="form-check-label" for="exampleRadios2">
+                     <i class="demo-icon icon-icono-i-11"></i>
+                     MUJER
+                     </label>
+                     </div> -->
                </div>
             </div>
             <div class="col-md-12 my-3">
-               <button type="submit" class="btn btn-primary">Enviar</button>
+               <div class="content-btn">
+               <button type="submit" class="mx-2 btn btn-primary-my">Solicitar Servicio</button>
+               </div>
             </div>
             {!! Form::close() !!}
             <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -147,6 +164,7 @@
             </button>
          </div>
          <div class="modal-body">
+            <b>{{ $servicio->nombre }}</b><br><br>
             {{ $servicio->descripcion }}
          </div>
          <div class="modal-footer">

@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/notificacion', function () {
+    return view('dashboard.user.notificacion');
+	})->name('notificacion');
 
 Route::group(['prefix' => 'dashboard'], function(){
 
@@ -29,6 +32,11 @@ Route::group(['prefix' => 'dashboard'], function(){
 
 	Route::resource('frontservicio', 'ServiciosFrontController');
 
+	
+
+// 	Route::get('user/notificacion', function () {
+  
+// })->name('dashboard.user.notificacion');
 
 // Route::get('user/list_servicios', [
 // 	'as' => 'frontservicio.index',

@@ -75,6 +75,7 @@
          
             //$(".map").attr('id', 'mapid-my');
             $(".mapg").css("display", "flex");
+            $(".register-location2").css("display", "flex");
             $(".mapg").html("<div id='mapid-my' class='map' style='width: 100%; display: none;'></div>");
             $(".opciones-btns-mapa").css("display", "none");
             $("#mapid-my").css("display", "flex");
@@ -93,14 +94,21 @@
             function onLocationFound(e) {
                var radius = e.accuracy / 1000;
          
-               L.marker(e.latlng).addTo(map)
-                  .bindPopup("Estas aqui a <b>" + radius + "</b> metros de este punto").openPopup();
+               var myMarker = L.marker(e.latlng).addTo(map)
+                  .bindPopup("Estas aqui a <b>" + radius + "</b> metros de este punto" ).openPopup();
          
-         
+               
          
                L.circle(e.latlng, radius).addTo(map);
+
+               $("#direccion").val(myMarker.getLatLng());
+               $("#direccion").attr("hidden", "hidden");
+               $(".ubi-tregistrada").css("display", "block");
+
             }
-         
+
+            
+
             function onLocationError(e) {
                alert(e.message);
             }
@@ -109,7 +117,9 @@
             map.on('locationerror', onLocationError);
          
             map.locate({setView: true, maxZoom: 30});
-         
+
+           
+            
           });
          
          
@@ -118,20 +128,33 @@
          
             //$(".map").attr('id', 'mapid-ubi');
             $(".mapg").css("display", "flex");
+            $(".register-location").css("display", "flex");
             $(".mapg").html("<div id='mapid-ubi' class='map' style='width: 100%; display: none;'></div>");
             $(".opciones-btns-mapa").css("display", "none");
             $("#mapid-ubi").css("display", "flex");
          
-            var map = L.map('mapid-ubi').setView([4.651350, -74.107121], 11);
+            
+            var map = L.map('mapid-ubi').setView([4.651350, -74.107121], 12);
+            var myMarker = map;
          
              L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
              }).addTo(map);
          
-             L.control.mapCenterCoord().addTo(map);
-         
-         
-         
+            L.control.mapCenterCoord().addTo(map);
+
+
+
+            //$(".miscoordenadas").clone().appendTo("#direccion2");
+
+            $(".register-location").click(function (){
+               // $("#direccion").val($(".miscoordenadas").text()); 
+               // $("#direccion2").val("Ubicación Registrada con exito");
+               $("#direccion").val($(".miscoordenadas").text());
+               $("#direccion").attr("hidden", "hidden");
+               $(".ubi-tregistrada").css("display", "block");
+            });
+
          });
          
          

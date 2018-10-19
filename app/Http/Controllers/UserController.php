@@ -55,7 +55,7 @@ class UserController extends Controller
         $servicios->save();
 
         // flash('Se ha creado la categoría '. $category->name . ' con exito!')->success();
-        return redirect()->route('home');
+        return redirect()->route('notificacion');
     }
 
     public function show($id) {

@@ -800,6 +800,8 @@ $(document).ready(function () {
 		$("#mapid-my").fadeOut();
 		$("#mapid-ubi").fadeOut();
 		$(".mapg").fadeOut();
+		$(".register-location").fadeOut();
+		$(".register-location2").fadeOut();
 	});
 });
 

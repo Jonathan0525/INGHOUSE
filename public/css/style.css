@@ -33,12 +33,85 @@ html {
   height: 100%;
 }
 
+.servicio_listado i {
+  color: #fdc100;
+  font-size: 2.4rem;
+}
+
+.info-servicio-box {
+  width: 70%;
+}
+
+.notificacion-hecha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3rem;
+}
+
+.notificacion-hecha i {
+  color: #fec100;
+  font-size: 10rem;
+}
+
+.notificacion-hecha b {
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.notificacion-hecha p {
+  font-weight: 100;
+  font-size: 16px;
+}
+
 /*FONT*/
 
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url("/../fonts/glyphicons-halflings-regular.eot");
   src: url("/../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/../fonts/glyphicons-halflings-regular.woff") format("woff"), url("/../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
+}
+
+.content-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  /* background: red; */
+}
+
+.btn-primary-my {
+  background: #fdc300;
+  width: 94%;
+  margin: 0px !important;
+}
+
+.register-location {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .mapg {
@@ -66,7 +139,7 @@ a.btn.my-btn-primary {
 
 .btn-ubi {
   background: #fdbf12;
-  color: #403411;
+  color: #403411 !important;
   margin-left: 10px;
   font-size: 20px;
   font-weight: 400;
@@ -91,6 +164,10 @@ a.btn.my-btn-primary {
   position: fixed;
   top: 0px;
   left: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,7 +268,7 @@ a.btn.my-btn-primary {
   font-size: 60px;
 }
 
-input#exampleRadios1 {
+input.form-check-input {
   position: relative;
   margin: 0px;
   width: 0px;
@@ -203,7 +280,7 @@ input#exampleRadios2 {
   width: 0px;
 }
 
-input#exampleRadios2:checked + label i {
+input.form-check-input:checked + label i {
   -webkit-transition: all ease .8s;
   transition: all ease .8s;
   color: #fdc200;
@@ -285,6 +362,24 @@ b.t-ser {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border: none;
+  font-size: 12px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.badge-y-out {
+  border: solid 2px #fdc013;
+  margin: 0px;
+  color: #fdc013;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 17px;
+  padding: .001rem .8rem;
+  width: auto;
+  position: relative;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   font-size: 12px;
   margin-right: 10px;
   font-weight: 500;
@@ -1252,9 +1347,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 5px;
+  position: relative;
 }
 
 .servicio_listado h4 {
@@ -1269,10 +1366,11 @@ a {
   font-weight: 600;
   background: #fdc013;
   padding: .2rem 10px;
-  margin-left: 10px;
+  margin-top: 5px;
   font-size: 14px;
   border-radius: 13px;
-  margin-right: 10px;
+  width: 150px;
+  text-align: center;
 }
 
 .form-control:focus {
@@ -1418,6 +1516,10 @@ span.line-home-btn {
   font-weight: 500;
 }
 
+.info-servicio-box h4 {
+  font-size: 15px;
+}
+
 ul.menu-user-opt li a {
   font-size: 20px;
   color: #fff;
@@ -1446,9 +1548,12 @@ span.box-mini-li {
   color: #fff !important;
   position: absolute;
   font-size: 30px !important;
-  top: 2%;
+  top: 0%;
+  z-index: 9999;
+  background: #fdc000;
   cursor: pointer;
-  right: 4%;
+  right: 0%;
+  border-radius: 0px 0px 0px 10px;
 }
 
 ul.menu-user-opt li {
@@ -1669,6 +1774,9 @@ img.img-fluid.loading {
     font-weight: 400;
     text-transform: uppercase;
     margin-right: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   table.table-condensed {

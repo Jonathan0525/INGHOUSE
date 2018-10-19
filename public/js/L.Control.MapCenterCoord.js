@@ -23,7 +23,7 @@ L.Control.MapCenterCoord = L.Control.extend({
     }
 
     // Control container
-    this._container = L.DomUtil.create('div', 'leaflet-control-mapcentercoord');
+    this._container = L.DomUtil.create('div', 'leaflet-control-mapcentercoord miscoordenadas');
     L.DomEvent.disableClickPropagation(this._container);
 
     // Add events listeners for updating coordinates & icon's position
@@ -75,6 +75,7 @@ L.Control.MapCenterCoord = L.Control.extend({
   _getMapCenterCoord: function () {
     if (this.options.projected) return this._getProjectedCoord(this._map.options.crs.project(this._map.getCenter()));
     return this._getLatLngCoord(this._map.getCenter());
+
   },
 
   _getProjectedCoord: function (center) {
@@ -120,10 +121,16 @@ L.Control.MapCenterCoord = L.Control.extend({
       lat = this._format('##0.00000', center.lat) + 'º';
     }
 
+    
+
     return L.Util.template(this.options.template, {
+
       x: (!this.options.latlngDesignators && center.lng_neg ? '-' : '') + lng + (this.options.latlngDesignators ? (center.lng_neg ? ' W' : ' E') : ''),
       y: (!this.options.latlngDesignators && center.lat_neg ? '-' : '') + lat + (this.options.latlngDesignators ? (center.lat_neg ? ' S' : ' N') : '')
     });
+
+
+
   },
 
   /*
