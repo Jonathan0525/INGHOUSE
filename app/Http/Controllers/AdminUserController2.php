@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Servicio;
+use App\Asesoria;
 
-class AdminUserController extends Controller
+class AdminUserController2 extends Controller
 {
     public function index() {
 
-    $servicios = Servicio::orderBy('id', 'DESC')->paginate(5);
-    return view('dashboard.adminpanel.index')->with('servicios', $servicios);
+    $asesorias = Asesoria::orderBy('id', 'DESC')->paginate(5);
+    return view('dashboard.adminpanel2.index')->with('asesorias', $asesorias);
     
   
 
@@ -18,16 +18,16 @@ class AdminUserController extends Controller
 
     public function create() {
 
-    	return view('dashboard.adminpanel.create');
+    	return view('dashboard.adminpanel2.create');
 
     }
 
     public function store(Request $request) {
-        $servicio = new Servicio($request->all());
-        $servicio->save();
+        $asesoria = new Asesoria($request->all());
+        $asesoria->save();
 
         // flash('Se ha creado la categoría '. $category->name . ' con exito!')->success();
-        return redirect()->route('adminpanel.index');
+        return redirect()->route('adminpanel2.index');
     }
 
     public function show($id) {

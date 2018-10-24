@@ -30,7 +30,7 @@
             </a>
          </div>
          <div class="btn-p">
-            <a href="" class="btn-home">
+            <a href="{{ url('/dashboard/frontasesorias/') }}" class="btn-home">
                <i class="demo-icon icon-icono-i-4"></i>
                <p>SOLICITAR <br>ASESORIA</p>
                <span class="line-home-btn"></span>

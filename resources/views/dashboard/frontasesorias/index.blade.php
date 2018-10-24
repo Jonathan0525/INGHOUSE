@@ -4,25 +4,25 @@
 <div class="container-fluid no-gutters my-no-gutters b-general">
    <div class="panel panel-default">
       <div class="panel-body header-name">
-         <h3>Servicios disponibles</h3>
+         <h3>Asesorias disponibles</h3>
          <div class="my-4 services">
-            @foreach($servicios as $servicio)
-            <a href="{{ route('user.create_s', $servicio->id) }}">
+            @foreach($asesorias as $asesoria)
+            <a href="{{ route('asesoria.create_s', $asesoria->id) }}">
                <div class="my-2 servicio_listado">
                   <i class="demo-icon icon-icono-i-15"></i>
                <div class="info-servicio-box">
 
-                  <h4>{{ $servicio->nombre }}</h4>
+                  <h4>{{ $asesoria->nombre }}</h4>
                   <p>@php
                      setlocale(LC_MONETARY,"en_US");
-                     echo money_format('%(#10.0n', $servicio->precio_hora);
+                     echo money_format('%(#10.0n', $asesoria->precio_hora);
                      @endphp x Hora
                   </p>
                </div>
                </div>
             </a>
             @endforeach
-            {{ $servicios->links() }}
+            {{ $asesorias->links() }}
          </div>
       </div>
    </div>

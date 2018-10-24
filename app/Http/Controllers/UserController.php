@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ServiciosRequest;
 use Illuminate\Http\Request;
 use App\Servicio;
+use App\Asesoria;
 use App\List_servicio;
 use App\User;
 
@@ -28,9 +29,9 @@ class UserController extends Controller
     public function list_servicios() {
 
 
-        $servicios = Servicio::orderBy('id', 'DESC')->paginate(5);
-        return view('dashboard.frontservicio.index')
-            ->with('servicios', $servicios);
+        // $servicios = Servicio::orderBy('id', 'DESC')->paginate(5);
+        // return view('dashboard.frontservicio.index')
+        //     ->with('servicios', $servicios);
         
 
     }
@@ -47,6 +48,8 @@ class UserController extends Controller
 
     }
 
+   
+
     public function store(Request $request) {
         $servicios = new List_servicio($request->all());
         $servicios->user_id = \Auth::user()->id;
@@ -57,6 +60,8 @@ class UserController extends Controller
         // flash('Se ha creado la categoría '. $category->name . ' con exito!')->success();
         return redirect()->route('notificacion');
     }
+
+
 
     public function show($id) {
 
