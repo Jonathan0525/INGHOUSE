@@ -1398,14 +1398,7 @@ a {
   text-align: center;
 }
 
-.form-control:focus {
-  color: #495057;
-  background-color: gainsboro !important;
-  border-color: #f7921e !important;
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
-}
+
 
 @font-face {
   font-family: 'fontello';
@@ -1660,12 +1653,13 @@ ul.menu-user-opt {
 }
 
 .form-control:focus {
-  color: #495057;
-  background-color: rgba(0, 123, 255, 0);
-  border-color: #80bdff;
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
-          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+    color: #495057;
+    background-color: rgba(220, 220, 220, 0.37) !important;
+    border-color: #f7921e !important;
+    outline: 0;
+    transition:all ease .5s;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
 }
 
 .my-input {
@@ -1789,6 +1783,30 @@ img.img-fluid.loading {
 /*MOVIL*/
 
 @media screen and (max-width: 768px) {
+    .btn-p {
+    background: #27336e;
+    width: 50%;
+    height: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: solid 1px #1f2958;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+  .btn-p i {
+    color: #fff;
+    font-size: 30px;
+}
+  .container-fluid-my {
+    height: auto;
+    padding: 1rem;
+}
   .my-4.services a {
     width: 48%;
     margin: 4px;
