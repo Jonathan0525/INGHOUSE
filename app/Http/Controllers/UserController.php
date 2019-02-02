@@ -17,48 +17,19 @@ class UserController extends Controller
 
     public function create($id) {
 
-        // dd('hola');
-        $servicio = Servicio::find($id);
         
-        return view('dashboard.user.create')
-            ->with('servicio', $servicio);
-        
-
-    }
-
-    public function list_servicios() {
-
-
-        // $servicios = Servicio::orderBy('id', 'DESC')->paginate(5);
-        // return view('dashboard.frontservicio.index')
-        //     ->with('servicios', $servicios);
-        
+       
 
     }
 
 
-    public function createservice($id) {
 
-        // dd('hola');
-        $servicio = Servicio::find($id);
-        
-        return view('dashboard.user.create')
-            ->with('servicio', $servicio);
-            
-
-    }
+   
 
    
 
     public function store(Request $request) {
-        $servicios = new List_servicio($request->all());
-        $servicios->user_id = \Auth::user()->id;
-
-        // dd($servicios);
-        $servicios->save();
-
-        // flash('Se ha creado la categoría '. $category->name . ' con exito!')->success();
-        return redirect()->route('notificacion');
+        
     }
 
 

@@ -5,10 +5,10 @@
    <div class="panel panel-default">
       <div class="panel-body header-name">
          <h3>Servicios disponibles</h3>
-         <div class="my-4 services">
+         <div class="my-1 services">
             @foreach($servicios as $servicio)
-            <a href="{{ route('user.create_s', $servicio->id) }}">
-               <div class="my-2 servicio_listado">
+            <a href="{{ route('servicio.create_s', $servicio->id) }}">
+               <div class="my-1 servicio_listado">
                   <i class="demo-icon icon-icono-i-15"></i>
                <div class="info-servicio-box">
 
@@ -22,8 +22,9 @@
                </div>
             </a>
             @endforeach
-            {{ $servicios->links() }}
+            
          </div>
+         {{ $servicios->links() }}
       </div>
    </div>
 </div>

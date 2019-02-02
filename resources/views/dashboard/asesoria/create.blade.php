@@ -23,10 +23,7 @@
             <div class="col-md-6  mx-0 pt-3 pb-4 px-4 mt-0 selector_horas stage">
                <h5>Horas requeridas</h5>
                <div class="box-content">
-                  <div class="selector_horas_btns">
-                     <a onclick="myFunction2()">-</a>
-                     <a onclick="myFunction()">+</a>
-                  </div>
+                 
                   <div class="info-user-select">
                      <input type="text" name="precio_asesoria" hidden="hidden" id="precio_asesoria" class="nombre" value="{{$asesoria->precio_hora}}">
                      <div class="name-hora">
@@ -37,6 +34,12 @@
                         echo  "$ " . $asesoria->precio_hora;
                         @endphp
                      </p>
+                  </div>
+                  <div class="info-user-select">
+                   <div class="selector_horas_btns">
+                     <a onclick="myFunction2()">-</a>
+                     <a onclick="myFunction()">+</a>
+                  </div>
                   </div>
                </div>
             </div>

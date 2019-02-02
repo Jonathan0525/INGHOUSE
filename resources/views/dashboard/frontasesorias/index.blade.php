@@ -5,11 +5,11 @@
    <div class="panel panel-default">
       <div class="panel-body header-name">
          <h3>Asesorias disponibles</h3>
-         <div class="my-4 services">
+         <div class="my-1 services">
             @foreach($asesorias as $asesoria)
             <a href="{{ route('asesoria.create_s', $asesoria->id) }}">
-               <div class="my-2 servicio_listado">
-                  <i class="demo-icon icon-icono-i-15"></i>
+               <div class="my-1 servicio_listado">
+                  <i class="demo-icon icon-icono-i-16"></i>
                <div class="info-servicio-box">
 
                   <h4>{{ $asesoria->nombre }}</h4>
@@ -22,8 +22,9 @@
                </div>
             </a>
             @endforeach
-            {{ $asesorias->links() }}
+            
          </div>
+         {{ $asesorias->links() }}
       </div>
    </div>
 </div>

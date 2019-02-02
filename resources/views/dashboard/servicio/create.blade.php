@@ -5,7 +5,7 @@
    <div class="panel panel-default">
       <div class="panel-body ">
          <div class="">
-            {!! Form::open(['route' => 'user.store', 'method' => 'POST' , 'class' => 'row no-gutters']) !!}
+            {!! Form::open(['route' => 'frontservicio.store', 'method' => 'POST' , 'class' => 'row no-gutters']) !!}
             <div class="col-md-12  mx-0 p-4 mt-0 stage">
                <input type="text" name="servicio_id" id="servicio_id" hidden="hidden" class="nombre" value="{{$servicio->id}}">
                <h4><b class="t-ser">{{ $servicio->nombre }}</b></h4>
@@ -23,10 +23,7 @@
             <div class="col-md-6  mx-0 pt-3 pb-4 px-4 mt-0 selector_horas stage">
                <h5>Horas requeridas</h5>
                <div class="box-content">
-                  <div class="selector_horas_btns">
-                     <a onclick="myFunction2()">-</a>
-                     <a onclick="myFunction()">+</a>
-                  </div>
+                  
                   <div class="info-user-select">
                      <input type="text" name="precio_servicio" hidden="hidden" id="precio_servicio" class="nombre" value="{{$servicio->precio_hora}}">
                      <div class="name-hora">
@@ -37,6 +34,12 @@
                         echo  "$ " . $servicio->precio_hora;
                         @endphp
                      </p>
+                  </div>
+                  <div class="info-user-select">
+                  <div class="selector_horas_btns">
+                     <a onclick="myFunction2()">-</a>
+                     <a onclick="myFunction()">+</a>
+                  </div>
                   </div>
                </div>
             </div>
@@ -78,7 +81,7 @@
                <div class="form-group">
                   <!-- <label for="exampleInputEmail1"></label> -->
                   <!-- <input type="text" class="form-control" value="" id="direccion2" name="direccion2"  placeholder="Ingresa Dirección">  -->
-                  <input type="text" class="form-control ubi-tregistrada" readonly="readonly" value="" id=""  name=""  placeholder="Ubicación Registrada con exito" style="display: none;"> 
+                  <input type="text" class="form-control ubi-tregistrada" readonly="readonly" value="" id=""  name=""  placeholder=" Ubicación Registrada con exito" style="display: none;"> 
                   <input type="text" class="form-control" value="" id="direccion"  name="direccion"  placeholder="Ingresa Dirección"> 
                   <a class="btn my-btn-primary mt-2 mb-2" id="open-m-mapa">Ubicar en Mapa</a>
                </div>

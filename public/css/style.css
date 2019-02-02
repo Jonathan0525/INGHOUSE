@@ -33,6 +33,34 @@ html {
   height: 100%;
 }
 
+input.form-control.ubi-tregistrada {
+  border: #8BC34A 2px solid !important;
+  background: #E8F5E9 !important;
+}
+
+input.form-control.ubi-tregistrada::focus {
+  border: #8BC34A 2px solid !important;
+  background: #E8F5E9 !important;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #243071;
+  border-color: #243071;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #243071;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
 .services {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,7 +69,11 @@ html {
       flex-wrap: wrap;
 }
 
-.my-4.services a {
+a.page-link {
+  margin: 0px !important;
+}
+
+.services a {
   width: 24%;
   margin: 4px;
 }
@@ -369,6 +401,7 @@ button.badge-y {
 
 b.t-ser {
   font-weight: 300;
+  font-size: 16px;
 }
 
 .badge-y {
@@ -1398,7 +1431,16 @@ a {
   text-align: center;
 }
 
-
+.form-control:focus {
+  color: #495057;
+  background-color: rgba(220, 220, 220, 0.37) !important;
+  border-color: #f7921e !important;
+  outline: 0;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+}
 
 @font-face {
   font-family: 'fontello';
@@ -1637,7 +1679,7 @@ ul.menu-user-opt {
   width: 100%;
   height: 100%;
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0px;
   -webkit-box-align: center;
@@ -1650,16 +1692,6 @@ ul.menu-user-opt {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.form-control:focus {
-    color: #495057;
-    background-color: rgba(220, 220, 220, 0.37) !important;
-    border-color: #f7921e !important;
-    outline: 0;
-    transition:all ease .5s;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
 }
 
 .my-input {
@@ -1766,7 +1798,7 @@ img.img-fluid.loading {
 }
 
 @media screen and (max-width: 980px) {
-  .my-4.services a {
+  .services a {
     width: 32%;
     margin: 4px;
   }
@@ -1783,7 +1815,13 @@ img.img-fluid.loading {
 /*MOVIL*/
 
 @media screen and (max-width: 768px) {
-    .btn-p {
+  .panel-body.header-name {
+    margin: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .btn-p {
     background: #27336e;
     width: 50%;
     height: 140px;
@@ -1798,16 +1836,19 @@ img.img-fluid.loading {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-}
+  }
+
   .btn-p i {
     color: #fff;
     font-size: 30px;
-}
+  }
+
   .container-fluid-my {
     height: auto;
     padding: 1rem;
-}
-  .my-4.services a {
+  }
+
+  .services a {
     width: 48%;
     margin: 4px;
   }
@@ -1899,7 +1940,7 @@ img.img-fluid.loading {
 }
 
 @media screen and (max-width: 570px) {
-  .my-4.services a {
+  .services a {
     width: 100%;
     margin: 4px;
   }

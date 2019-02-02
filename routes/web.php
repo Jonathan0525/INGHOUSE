@@ -19,9 +19,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/notificacion', function () {
 
-	return view('dashboard.user.notificacion');
+	return view('dashboard.servicio.notificacion');
 
 })->name('notificacion');
+
+
 
 Route::get('/notificacion_asesoria', function () {
 
@@ -29,7 +31,10 @@ Route::get('/notificacion_asesoria', function () {
 
 })->name('notificacion_asesoria');
 
+
+
 Route::group(['prefix' => 'dashboard'], function(){
+		Route::resource('recurso', 'RecursosController');
 		Route::resource('adminpanel', 'AdminUserController');
 		Route::resource('adminpanel2', 'AdminUserController2');
 		Route::resource('user', 'UserController');
@@ -41,9 +46,9 @@ Route::group(['prefix' => 'dashboard'], function(){
 // 	'as' => 'frontservicio.index',
 // 	'uses' => 'UserController@list_servicios'
 // ]);
-		Route::get('user/create_s/{id}', [
-		'as' => 'user.create_s',
-		'uses' => 'UserController@createservice'
+		Route::get('servicio/create_s/{id}', [
+		'as' => 'servicio.create_s',
+		'uses' => 'ServiciosFrontController@createservice'
 		]);
 
 

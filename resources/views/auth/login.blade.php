@@ -56,7 +56,7 @@
                </div>
             </div>
             <div class="form-group d-flex flex-column align-items-center justify-content-center">
-               <a class="btn btn-link mt-4 btn-link" href="{{ route('register') }}">
+               <a class="btn btn-link btn-link" href="{{ route('register') }}">
                   <h4 class="color-3">Registrarse</h4>
                </a>
             </div>
